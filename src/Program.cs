@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json;
 using KQLAnalyzer;
 
@@ -32,6 +33,9 @@ public class Program
             Console.WriteLine($"Could not parse environments file {environmentsFile.FullName}: {e.Message}");
             Environment.Exit(1);
         }
+
+        // Add merged m365_with_sentinel environment if both m365 and sentinel exist
+        EnvironmentUtils.AddM365WithSentinelIfPresent(kqlEnvironments);
 
         if (rest)
         {
