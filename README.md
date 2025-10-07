@@ -114,6 +114,8 @@ This will produce a file called `environments.json` which contains details about
 
 A file called `environments.json` is already included in the repository, so you don't need to run this command unless you want to update the schema information.
 
+When both `sentinel` and `m365` environments have been defined, the tool will automatically create a merged environment called `m365_with_sentinel` which contains the tables and functions from both platforms. This allows analyzing queries targeting the merged Defender XDR platform.
+
 ## Input file format
 
 The query.json file can contain the following properties:
